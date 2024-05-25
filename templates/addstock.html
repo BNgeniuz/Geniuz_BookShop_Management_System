@@ -1,0 +1,88 @@
+{% extends "temp1.html" %}
+{% block body %}
+{% with messages=get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-success" role="alert">
+        {{messages[0]}}
+        </div>
+        {% endif %}
+        {% endwith %}
+<div class="container p-3 my-3 border">
+
+        <form action="" method="POST">
+        <div class="row">
+        <div class="col-xs-6 col-sm-3">
+        ISBN:
+        <br>
+        <input name="bno" required/>
+        <br>
+        Book Name:
+        <br>
+        <input name="bn" required/>
+        <br>
+        Author Name:
+        <br>
+        <input name="an" required/>
+        <br>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+        Edition:
+        <br>
+        <input name="edi" required/>
+        <br>
+        Publication:
+        <br>
+        <input name="pub" required/>
+        <br>
+        Price:
+        <br>
+        <input type="number" value="1" name="pri" required>
+        <br>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+        Genre:
+        <br>
+        <select name="gen" required>
+        <option value="Gen">General</option>
+        <option value="Stu">Studies</option>
+        <option value="Novel">Novel</option>
+        <option value="Comic">Comic</option>
+        </select>
+        <br>
+        Quantity:
+        <br>
+        <input type="number" value="1" name="qu" required>
+        <br>
+        Image URL:
+        <br>
+        <input name="url" required/>
+        <br>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+        About Book:
+        <br>
+        <textarea rows="5" cols="30" type="text" name="abu" required></textarea>
+
+        </div>
+        </div>
+        <br>
+        <div class="d-flex justify-content-center">
+        Recomended?
+        <br>
+        <select name="rec" required>
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+        </select>
+        </div>
+
+        <br>
+        
+        <div class="d-flex justify-content-center">
+        <input class="btn btn-danger" type="submit" name="ad" value="ADD"/>&nbsp &nbsp
+        <input class="btn btn-danger" type="submit" name="bk" value="Back" formnovalidate/>
+        </div>
+        
+</form>
+
+</div>
+{% endblock %}

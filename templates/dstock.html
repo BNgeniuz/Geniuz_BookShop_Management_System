@@ -1,0 +1,46 @@
+{% extends "temp1.html" %}
+{% block body %}
+<form action="" method="POST">
+        <br>
+        <table class="table table-hover">
+        <thead>
+        <tr>
+        {% for i in h %}
+        <th scope="col">
+        {{i}}
+        </th>       
+        {% endfor %}       
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in l1 %}
+        <tr>       
+        {% for j in i %}
+        <td>
+        {{j}}
+        </td>
+        {% endfor %}
+        </tr>
+        {% endfor %}
+         </tbody>
+        </table>
+        <p>
+        {% with messages=get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-success" role="alert">
+        {{messages[0]}}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <div class="d-flex justify-content-center">
+         ISBN no. to be deleted:&nbsp&nbsp
+        <input type="text" name="unam" required/>
+        </div>
+        <br>
+        <div class="d-flex justify-content-center">
+        <input class="btn btn-danger" type="submit" name="dl" value="Delete"/>&nbsp&nbsp
+        <input class="btn btn-danger" type="submit" name="bkk" value="Back" formnovalidate/> 
+        </div>
+        <br>
+</form>
+{% endblock %}

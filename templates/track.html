@@ -1,0 +1,45 @@
+{% extends "temp.html" %}
+{% block body %}
+<form action="" method="POST">
+        <br>
+        <table class="table table-hover">
+        <thead>
+        <tr>
+        {% for i in h %}
+        <th scope="col">
+        {{i}}
+        </th>       
+        {% endfor %}       
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in l1 %}
+        <tr>       
+        {% for j in i %}
+        <td>
+        {{j}}
+        </td>
+        {% endfor %}
+        </tr>
+        {% endfor %}
+         </tbody>
+        </table>
+        <p>
+        {% with messages=get_flashed_messages() %}
+        {% if messages %}
+         <div class="alert alert-success" role="alert">       
+        {{messages[0]}}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <p class="text-center">
+        Order ID:
+        <input type="text" name="st" required/>
+        </p>
+        <br>
+        <div class="d-flex justify-content-center">
+        <input class="btn btn-danger" type="submit" name="dl" value="Cancel"/>&nbsp&nbsp
+        <input class="btn btn-danger" type="submit" name="bkk" value="Back" formnovalidate/> 
+        </div>
+</form>
+{% endblock %}
