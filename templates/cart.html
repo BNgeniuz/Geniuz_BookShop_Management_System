@@ -39,7 +39,7 @@
 		                                    </div>
 		                                    <div class="price">
 		                                        {% set c = i[0]['Price'] | int() %}
-		                                        ₹{{c}}
+		                                        GHC{{c}}
 		                                    </div>
 	                                    </div>
 	                                    </a>
@@ -52,7 +52,7 @@
 	                                <td>
 	                                    <div class="total">
 	                                    {% set q = i[1] | int() %}
-	                                        ₹{{c*q}}
+	                                        GHC{{c*q}}
 	                                    </div>
 	                                </td>
 	                            </tr>
@@ -72,7 +72,7 @@
 			                    <tbody>
 			                        <tr>
 			                            <td>Subtotal</td>
-			                            <td class="subtotal">₹{{tt}}</td>
+			                            <td class="subtotal">GHC{{tt}}</td>
 			                        </tr>
 			                        <tr>
 			                            <td>Shipping</td>
@@ -80,7 +80,7 @@
 			                        </tr>
 			                        <tr class="total-row">
 			                            <td>Total</td>
-			                            <td class="price-total">₹{{tt}}</td>
+			                            <td class="price-total">GHC{{tt}}</td>
 			                        </tr>
 			                    </tbody>
 			                </table>

@@ -41,29 +41,29 @@ def con():
         if request.form.get("sub"):
             
             toaddr  = request.form['txtEmail']
-            passwor = "bbb@54321"
+            passwor = "#1master"
             msg = EmailMessage()
-            msgt='Thank you for connecting with us.\nBrilliants Books'
+            msgt='Thank you for connecting with us.\nGeniuz Books'
             msg.set_content(msgt)
-            msg['Subject'] = "Thanks From Brilliant Books"
-            msg['From'] = 'Brilliant Books'
+            msg['Subject'] = "Thanks From Geniuz Books"
+            msg['From'] = 'Geniuz Books'
             msg['To'] = toaddr
             server = smtplib.SMTP('smtp.gmail.com', 587)
             server.starttls()
-            server.login("brilliantbooks0@gmail.com", passwor)
+            server.login("geniuzbooks0@gmail.com", passwor)
             server.send_message(msg)
             server.quit()
-            toaddrs  = "brilliantbooks0@gmail.com"
-            password = "bbb@54321"
+            toaddrs  = "geniuzs0@gmail.com"
+            password = "#1master"
             msg = EmailMessage()
             msgtxt='From '+request.form['txtName']+'\n'+request.form['txtMsg']+'\n'+'Contact: '+request.form['txtPhone']+'\n'+request.form['txtEmail']
             msg.set_content(msgtxt)
             msg['Subject'] = "From contact us"
-            msg['From'] = 'Brilliant Books'
+            msg['From'] = 'Geniuz Books'
             msg['To'] = toaddrs
             server = smtplib.SMTP('smtp.gmail.com', 587)
             server.starttls()
-            server.login("brilliantbooks0@gmail.com", password)
+            server.login("geniuzbooks@gmail.com", password)
             server.send_message(msg)
             server.quit()
             
@@ -210,7 +210,7 @@ def log():
             cur.execute("select * from user where unam like %s",(unam,))
             mysql.connection.commit()
             r=cur.fetchall()
-            if unam=='admin' and pas=='bbb54321':
+            if unam=='admin' and pas=='1master':
                 session['k']=1
                 session['ho']='home'
                 return redirect("/ahom")
@@ -614,16 +614,16 @@ def ress():
             if len(r)>0:
                 
                 toaddr  =us
-                passwor = "bbb@54321"
+                passwor = "#1master"
                 msg = EmailMessage()
                 msgt='Your OTP for password reset request is ' +ko+'.\n        -Brilliants Books'
                 msg.set_content(msgt)
-                msg['Subject'] = "RESET PASSWORD From Brilliant Books"
-                msg['From'] = 'Brilliant Books'
+                msg['Subject'] = "RESET PASSWORD From Geniuz Books"
+                msg['From'] = 'Geniuz Books'
                 msg['To'] = toaddr
                 server = smtplib.SMTP('smtp.gmail.com', 587)
                 server.starttls()
-                server.login("brilliantbooks0@gmail.com", passwor)
+                server.login("geniuzbooks0@gmail.com", passwor)
                 server.send_message(msg)
                 server.quit()
                 
@@ -788,34 +788,34 @@ def orde():
                      s=s+str(i['orid'])+","
                  
                  toaddr  = ed
-                 passwor = "bbb@54321"
+                 passwor = "#1master"
                  msg = EmailMessage()
-                 msgt='Your open Order IDs='+s+'\n'+str(l)+'\n'+"Total Amount: ₹"+str(ttt)+' \n Thank you for chosing us.\nBrilliants Books'
+                 msgt='Your open Order IDs='+s+'\n'+str(l)+'\n'+"Total Amount: GHC"+str(ttt)+' \n Thank you for chosing us.\nGeniuz Books'
                  msg.set_content(msgt)
-                 msg['Subject'] = "Thanks From Brilliant Books"
-                 msg['From'] = 'Brilliant Books'
+                 msg['Subject'] = "Thanks From Geniuz Books"
+                 msg['From'] = 'Geniuz Books'
                  msg['To'] = toaddr
                  server = smtplib.SMTP('smtp.gmail.com', 587)
                  server.starttls()
-                 server.login("brilliantbooks0@gmail.com", passwor)
+                 server.login("geniuzbooks0@gmail.com", passwor)
                  server.send_message(msg)
                  server.quit()
-                 toaddrs  = "brilliantbooks0@gmail.com"
-                 password = "bbb@54321"
+                 toaddrs  = "geniuzbooks0@gmail.com"
+                 password = "#1master"
                  msg = EmailMessage()
-                 msgtxt=str(l)+'\n'+"Total Amount: ₹"+str(ttt)+'\n'+'Order IDs='+s+'\n'+'From '+nam+'\n'+add+'\n'+'Contact: '+pd+'\n'+ed
+                 msgtxt=str(l)+'\n'+"Total Amount: GHC"+str(ttt)+'\n'+'Order IDs='+s+'\n'+'From '+nam+'\n'+add+'\n'+'Contact: '+pd+'\n'+ed
                  msg.set_content(msgtxt)
                  msg['Subject'] = "From Orders"
-                 msg['From'] = 'Brilliant Books'
+                 msg['From'] = 'Geniuz Books'
                  msg['To'] = toaddrs
                  server = smtplib.SMTP('smtp.gmail.com', 587)
                  server.starttls()
-                 server.login("brilliantbooks0@gmail.com", password)
+                 server.login("geniuzbooks0@gmail.com", password)
                  server.send_message(msg)
                  server.quit()
                  session['det']=[]
                  
-                 msg1='Your open Order IDs='+s+'\n'+str(l)+'\n'+"Total Amount: Rs."+str(ttt)+' \n Thank you for chosing us.\nBrilliants Books'
+                 msg1='Your open Order IDs='+s+'\n'+str(l)+'\n'+"Total Amount: GHC."+str(ttt)+' \n Thank you for chosing us.\nGeniuz Books'
                  url='https://www.fast2sms.com/dev/bulk'
                  para={'authorization':'dFjveUQ2gRbokDNMJ4CALmYfZSI3VpBOuWyPwznlHTrExG5cisLjXZOsiGHhSMgaJNu2Ve7Q6nd9obPr',
                           'sender_id':'FSTSMS',
